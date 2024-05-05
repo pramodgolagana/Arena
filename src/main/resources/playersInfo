@@ -1,0 +1,4 @@
+ate.app/Contents/lib/idea_rt.jar=54422:/Users/pramodgolagana/Applications/IntelliJ IDEA Ultimate.app/Contents/bin -Dfile.encoding=UTF-8 -classpath /Users/pramodgolagana/Desktop/Intelli/Arena/target/classes org.example.Main
+Hello world!
+
+Process finished with exit code 0
