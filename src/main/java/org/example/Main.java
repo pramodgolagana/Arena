@@ -8,7 +8,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Main {
-
     static void StartGamePlay(){
         Player p1 = new Player();
         Player p2 = new Player();
