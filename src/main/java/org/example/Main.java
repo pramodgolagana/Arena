@@ -1,11 +1,14 @@
 package org.example;
 
 import model.Player;
+import service.GamePlay;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+
+import static service.GamePlay.swapPlayers;
 
 public class Main {
     static void StartGamePlay(){
@@ -36,6 +39,23 @@ public class Main {
         } catch (IOException e) {
 
             System.out.println("There is a ");
+        }
+        GamePlay g= new GamePlay();
+        ArrayList<Player> Battelers = new ArrayList<>();
+        Player attacker = g.getAttacker(p1,p2);
+        Player defender = g.getDefender(p1,p2);
+        Battelers.add(attacker);
+        Battelers.add(defender);
+
+
+
+        while(attacker.getHealth()>0 && defender.getHealth()>0){
+
+            int attack = g.attack(Battelers.get(0));
+            int deffend = g.defend(Battelers.get(1));
+            g.desideHealth(attack-deffend,Battelers.get(1));
+            swapPlayers(Battelers);
+
         }
 
     }
