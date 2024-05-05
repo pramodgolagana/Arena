@@ -57,9 +57,13 @@ public class Main {
             swapPlayers(Battelers);
 
         }
-
+        if(attacker.getHealth()>0)
+            System.out.println("Player "+ attacker.getId() +" won the match, Congratulations!");
+        else
+            System.out.println("Player "+ defender.getId() +" won the match, Congratulations!");
     }
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
+        StartGamePlay();
     }
 }
