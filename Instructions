@@ -1,0 +1,7 @@
+Add two players info in a single line with separated by coma (,) 
+In the file playerInfo (Arena/src/main/resources/playerInfo)
+In the given order
+((Player 1 name , p1 health, p1 strength, p1 attack, player2 name, p2 health, p2 strength, p2 attack))
+Ex(Rahul,80,8,10,Jack,75,9,9)
+
+Now run the main method to get the winner. 

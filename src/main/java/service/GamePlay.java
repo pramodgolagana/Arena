@@ -12,6 +12,7 @@ public class GamePlay extends Player {
     }
     public int attack(Player p){
         int dice=rolling();
+        System.out.println(p.getId()+" My Health is  "+p.getHealth());
         return dice*p.getAttack();
     }
     public int defend(Player p){
@@ -19,7 +20,7 @@ public class GamePlay extends Player {
         return dice*p.getStrength();
     }
     public Player getAttacker(Player p1 , Player p2){
-        return (p1.getHealth()> p2.getHealth()) ? p1 : p2;
+        return p1.getHealth()> p2.getHealth() ? p1 : p2;
     }
     public Player getDefender(Player p1 , Player p2){
         return p1.getHealth()> p2.getHealth() ? p2 : p1;

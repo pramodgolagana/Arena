@@ -11,7 +11,11 @@ import java.util.ArrayList;
 import static service.GamePlay.swapPlayers;
 
 public class Main {
-    static void StartGamePlay(){
+
+
+
+
+    static void startGamePlay(){
         Player p1 = new Player();
         Player p2 = new Player();
 
@@ -38,23 +42,22 @@ public class Main {
             bufferedReader.close();
         } catch (IOException e) {
 
-            System.out.println("There is a ");
+            System.out.println("Given file path is not valied, Please enter a valied file path");
         }
-        GamePlay g= new GamePlay();
-        ArrayList<Player> Battelers = new ArrayList<>();
-        Player attacker = g.getAttacker(p1,p2);
-        Player defender = g.getDefender(p1,p2);
-        Battelers.add(attacker);
-        Battelers.add(defender);
-
+        GamePlay gamePlay= new GamePlay();
+        ArrayList<Player> Battlers = new ArrayList<>();
+        Player attacker = gamePlay.getAttacker(p1,p2);
+        Player defender = gamePlay.getDefender(p1,p2);
+        Battlers.add(attacker);
+        Battlers.add(defender);
 
 
         while(attacker.getHealth()>0 && defender.getHealth()>0){
 
-            int attack = g.attack(Battelers.get(0));
-            int deffend = g.defend(Battelers.get(1));
-            g.desideHealth(attack-deffend,Battelers.get(1));
-            swapPlayers(Battelers);
+            int attack = gamePlay.attack(Battlers.get(0));
+            int deffend = gamePlay.defend(Battlers.get(1));
+            gamePlay.desideHealth(attack-deffend,Battlers.get(1));
+            swapPlayers(Battlers);
 
         }
         if(attacker.getHealth()>0)
@@ -64,6 +67,6 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        StartGamePlay();
+        startGamePlay();
     }
 }
